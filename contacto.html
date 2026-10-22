@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulario para encargar ilustraciones personalizadas y conectar con la galería.">
+    <title>Contacto - Del Pincel al Píxel</title>
+    <!-- Favicon obligatorio en la raíz del proyecto -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
+    <!-- Hoja de estilos enlazada en su nueva carpeta css -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Noticias"
+      href="noticias.xml"
+    />
+</head>
+<body>
+    <!-- NUEVA BARRA DE NAVEGACIÓN CON ESPACIADO DISTRIBUIDO -->
+    <nav>
+      <!-- El icono de la paleta incrustado a la izquierda -->
+      <a href="index.html" class="nav-logo">
+        <img src="imagenes/logo.svg" alt="Logotipo de la galería de arte" />
+      </a>
+
+      <!-- Los cuatro enlaces agrupados en un contenedor para la derecha -->
+      <div class="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="horario.html">Horario</a>
+        <a href="contacto.html" class="activo">Contacto</a>
+      </div>
+    </nav>
+
+    <header>
+        <!-- Imagen de portada del encabezado -->
+        <figure class="logo-imagen">
+            <img src="imagenes/portada-contacto.jpg" alt="Cabecera de la página de contacto" width="800" height="450" class="logo-portada">
+            <figcaption>  Exposición de arte místico contemporáneo en la Galería virtual. Imagen de portada: <strong><em>"Rosa en b/n"</em></strong> por el artista <a href="https://singulart.com" target="_blank" rel="noopener">Gabriel Schmitz</a>.</figcaption>
+        </figure>
+        <h1 class="texto-inicial">Sintoniza Conmigo</h1>
+        <p class="texto-aparte">Escríbeme desde el corazón para dar <em>vida eterna</em> a tus visiones plásticas.</p>
+    </header>
+
+    <main class="animated-page">
+        <section id="contacto">
+            <h2 class="texto-especial">Hagamos vibrar tu idea visual en mi lienzo</h2>
+            <p>Si deseas encargar una obra inspirada en los métodos analógicos de <em>"Historia de la pintura"</em> o una composición digital al estilo <em>"Masters of Pixel Art"</em>, rellena este formulario con tus datos y tus intenciones creativas:</p>
+
+            <div class="seccion-faq">
+                <h3>Preguntas Frecuentes sobre el Proyecto</h3>
+                
+                <div class="faq-contenedor">
+                    <!-- Pregunta 1 -->
+                    <details class="faq-item">
+                        <summary class="faq-pregunta">¿Qué es Interpaint.toe y cuál es el origen de su nombre?</summary>
+                        <div class="faq-respuesta">
+                            <p>Interpaint.toe es el sobrenombre artístico del proyecto práctico del TFG [4.7]. Está conformado por la fusión de dos palabras en inglés: "Interact" (interactuar), de la cual se tomó "inter", y "Paint" (pintar) [4.7]. El sufijo ".toe" es un guiño directo al tipo de archivo y extensión nativa que utiliza el software de desarrollo Touchdesigner [4.7].</p>
+                        </div>
+                    </details>
+
+                    <!-- Pregunta 2 -->
+                    <details class="faq-item">
+                        <summary class="faq-pregunta">¿Qué entornos de desarrollo y hardware se utilizan en el proceso creativo?</summary>
+                        <div class="faq-respuesta">
+                            <p>El marco práctico utiliza Touchdesigner, un entorno de programación visual por nodos desarrollado por Derivative que permite generar gráficos interactivos complejos sin necesidad de código rígido [2.2, 4.0]. Este software se conecta a una cámara Kinect v1 de Microsoft, la cual combina lentes RGB y sensores de profundidad para capturar datos en 3D [2.2, 4.0].</p>
+                        </div>
+                    </details>
+
+                    <!-- Pregunta 3 -->
+                    <details class="faq-item">
+                        <summary class="faq-pregunta">¿Cómo funcionan los dos métodos de captación y mapeo para pintar?</summary>
+                        <div class="faq-respuesta">
+                            <p>El proyecto ofrece dos modalidades de interacción: la primera utiliza un operador denominado Opticalflow que registra las líneas de luces y sombras del cuerpo entero (la silueta) de forma muy fluida [2.2, 4.1]. La segunda asigna parámetros específicos a los bloques Select para registrar numéricamente el movimiento exclusivo de la mano derecha, logrando trazos más circulares y precisos [2.2, 4.1].</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- 🟢 EL FORMULARIO AHORA VIENE DEBAJO -->
+            <div class="seccion-formulario-contacto">
+                <h3>Formular una consulta o solicitud de encargo</h3>
+                <form action="#" method="get">
+                    <fieldset>
+                        <legend>Tu Esencia y Sintonía</legend>
+                        <p>
+                            <label for="nombre">Nombre o Razón Creativa:</label><br>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Alba Luna">
+                        </p>
+                        <p>
+                            <label for="email">Dirección de Correo:</label><br>
+                            <input type="email" id="email" name="email" required placeholder="tu-alma@correo.com">
+                        </p>
+                        <p>
+                            <label for="cantidad">Número de ilustraciones que deseas encargar (Máx. 5):</label><br>
+                            <input type="number" id="cantidad" name="cantidad" min="1" max="5" value="1" required>
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Detalles de la Visión Artística</legend>
+                        <p>
+                            <label for="asunto">¿Qué tipo de conexión buscas?</label><br>
+                            <select id="asunto" name="asunto">
+                                <option value="tradicional">Deseo una obra física clásica (Óleo / Tiza)</option>
+                                <option value="digital">Deseo una obra digital (Estilo Pixel Art)</option>
+                                <option value="charla">Compartir un pensamiento o consulta</option>
+                            </select>
+                        </p>
+
+                        <p>Destino conceptual de la obra:</p>
+                        <p>
+                            <input type="radio" id="uso-personal" name="uso_obra" value="personal" checked>
+                            <label for="uso-personal">Uso íntimo, puramente personal y decorativo</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="uso-comercial" name="uso_obra" value="comercial">
+                            <label for="uso-comercial">Uso Editorial, portadas de videojuegos o difusión comercial</label>
+                        </p>
+                        
+                        <p>
+                            <label for="mensaje">Háblame de los símbolos, colores o intenciones del dibujo:</label><br>
+                            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describe los elementos que imaginas inspirados en tus lecturas de arte..."></textarea>
+                        </p>
+
+                        <p>
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos">Comprendo plenamente que cada dibujo es una creación original de autoría pura del artista.</label>
+                        </p>
+                    </fieldset>
+
+                    <p>
+                        <button type="submit">Enviar Mensaje con Buena Energía</button>
+                    </p>
+                </form>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p class="pie-pagina">&copy; 2026 Galería de Arte &mdash; Realizado por Estefani Dias Black &mdash; Curso 2026-2027</p>
+        <p class="pie-pagina">Acompáñame a mi comunidad | <a href="noticias.xml">Canal RSS</a></p>
+        <p class="pie-pagina">Código fuente del proyecto: <a href="https://github.com" target="_blank" rel="noopener">Repositorio en GitHub</a></p>
+    </footer>
+</body>
+</html>

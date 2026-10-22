@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explora mis colecciones de arte analógico y digital inspiradas en los grandes maestros de la retícula.">
+    <title>Catálogo - Del Pincel al Píxel</title>
+    <!-- Favicon obligatorio en la raíz del proyecto -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
+    <!-- Hoja de estilos enlazada en su nueva carpeta css -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Noticias"
+      href="noticias.xml"
+    />
+</head>
+<body>
+     <!-- NUEVA BARRA DE NAVEGACIÓN CON ESPACIADO DISTRIBUIDO -->
+    <nav>
+      <!-- El icono de la paleta incrustado a la izquierda -->
+      <a href="index.html" class="nav-logo">
+        <img src="imagenes/logo.svg" alt="Logotipo de la galería de arte" />
+      </a>
+
+      <!-- Los cuatro enlaces agrupados en un contenedor para la derecha -->
+      <div class="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html" class="activo">Catálogo</a>
+        <a href="horario.html">Horario</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </nav>
+
+    <header>
+        <!-- Imagen de portada del encabezado -->
+        <figure class="logo-imagen">
+            <img src="imagenes/portada-catalogo.jpg" alt="Portada de la sección de catálogo" width="800" height="450" class="logo-portada">
+            <figcaption>Imagen de portada. <strong><em>"Zombies, portrait of a Society"</em></strong> por 
+            <a href="https://www.singulart.com/es/artista/susana-l%C3%B3pez-f-60540" target="_blank" rel="noopener">Susana López F.</a>
+            </figcaption>
+        </figure>
+        <h1 class="texto-inicial">Una superficie coloreada es una forma <strong>viva, real</strong></h1>
+        <p class="texto-aparte">Por <em>su viveza</em> la pintura al pastel es más hermosa que cualquier otra.</p>
+    </header>
+
+    <main class="animated-page">
+        <section id="catalogo">
+        <h2 class="texto-especial">Galería de obras: Del Lienzo a la Pantalla</h2>
+        
+        <p class="texto-justificado">
+          En este espacio puedes contemplar cómo las ideas de los artistas se transforman al cambiar de herramientas. Las obras expuestas muestran ese viaje técnico y visual, comenzando con los dibujos clásicos hechos a mano y terminando con las creaciones modernas diseñadas píxel a píxel en un ordenador. Es una selección pensada para descubrir cómo conviven el pasado y el presente del arte.
+        </p>
+
+        <h3 class="texto-destacado"><strong>Breve glosario del cambio</strong></h3>
+        
+        <p class="texto-justificado">
+          Para entender mejor los trabajos de la colección, estos son los dos extremos que marcan el inicio y el final de nuestra evolución artística:
+        </p>
+
+        <ul>
+          <li class="texto-justificado">
+            <strong>Dibujo clásico a mano:</strong> La forma tradicional de crear usando herramientas físicas sobre el papel. Un ejemplo histórico es el uso de puntas de metal finas sobre hojas preparadas, una técnica muy detallada que obligaba al artista a tener un pulso perfecto antes de que existieran los lápices actuales.
+          </li>
+          <li class="texto-justificado">
+            <strong>Arte de píxeles:</strong> El estilo digital donde los dibujos se construyen colocando con cuidado cada punto de color en la pantalla. Esta técnica aprovecha las formas cuadriculadas para crear imágenes limpias y llamativas, recordando a los primeros videojuegos y ordenadores.
+          </li>
+        </ul>
+
+        <p class="texto-aparte">
+          A continuación, te invitamos a explorar las imágenes de nuestra colección para ver estos conceptos en directo.
+        </p>
+
+
+            <!-- Rejilla artesanal con tus 6 dibujos con sus ofertas -->
+            <div class="galeria-artesanal">
+                <!-- Tarjeta de dibujo 1 -->
+                <article class="tarjeta-dibujo">
+                    <span class="etiqueta-exclusiva">Esencia</span>
+                    <img src="imagenes/dibujo1.jpg" alt="Dibujo a punta de plata medieval" width="400" height="300" loading="lazy">
+                    <div class="cuerpo-tarjeta">
+                        <h3>"Punta de plata"</h3>
+                        <p>Perfecta para delinear claramente los rasgos, consistía en trabajar sobre superficies previamente preparadas con gesso.</p>
+                        <p>Intercambio de energía: <s class="precio-viejo">50 &euro;</s> <mark class="oferta"><span class="precio-actual">35 &euro;</span> &nbsp; ¡Ofrenda Temporal!</mark></p>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de dibujo 2 -->
+                <article class="tarjeta-dibujo">
+                    <span class="etiqueta-exclusiva">Astral</span>
+                    <img src="imagenes/dibujo2.jpg" alt="Dibujo con pincel y realzado en blanco" width="400" height="300" loading="lazy">
+                    <div class="cuerpo-tarjeta">
+                        <h3>"Pincel y realzado"</h3>
+                        <p>Los artistas del Renacimiento realizaban un esbozo a carboncillo utilizando pintura blanca para iluminar las áreas claras.</p>
+                        <p>Intercambio de energía: <s class="precio-viejo">65 &euro;</s> <mark class="oferta"><span class="precio-actual">45 &euro;</span> &nbsp; ¡Descuento Estelar!</mark></p>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de dibujo 3 -->
+                <article class="tarjeta-dibujo">
+                    <span class="etiqueta-exclusiva">Mística</span>
+                    <img src="imagenes/dibujo3.jpg" alt="Dibujo complejo a pluma y tinta" width="400" height="300" loading="lazy">
+                    <div class="cuerpo-tarjeta">
+                        <h3>"Pluma y tinta"</h3>
+                        <p>En la década de 1500, el maestro alemán Alberto Durero utilizó la pluma para crear dibujos altamente complejos y expresivos.</p>
+                        <p>Intercambio de energía: <s class="precio-viejo">60 &euro;</s> <mark class="oferta"><span class="precio-actual">40 &euro;</span> &nbsp; ¡Sintonía Espiritual!</mark></p>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de dibujo 4 -->
+                <article class="tarjeta-dibujo">
+                    <span class="etiqueta-exclusiva">Ancestral</span>
+                    <img src="imagenes/dibujo4.jpg" alt="Estudio preparatorio a sanguina" width="400" height="300" loading="lazy">
+                    <div class="cuerpo-tarjeta">
+                        <h3>"Sanguina"</h3>
+                        <p>Durante el Renacimiento, esta técnica de tono rojizo acercó el dibujo clásico a la calidez cromática de la pintura.</p>
+                        <p>Intercambio de energía: <s class="precio-viejo">55 &euro;</s> <mark class="oferta"><span class="precio-actual">39 &euro;</span> &nbsp; ¡Conexión Cíclica!</mark></p>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de dibujo 5 -->
+                <article class="tarjeta-dibujo">
+                    <span class="etiqueta-exclusiva">Textura</span>
+                    <img src="imagenes/dibujo5.jpg" alt="Dibujo con la técnica aux deux crayons" width="400" height="300" loading="lazy">
+                    <div class="cuerpo-tarjeta">
+                        <h3>"Tiza"</h3>
+                        <p>Al combinar la tiza blanca con la negra, técnica conocida como <em>aux deux crayons</em>, se logran efectos de gran profundidad.</p>
+                        <p>Intercambio de energía: <s class="precio-viejo">55 &euro;</s> <mark class="oferta"><span class="precio-actual">39 &euro;</span> &nbsp; ¡Conexión Cíclica!</mark></p>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de dibujo 6 -->
+                <article class="tarjeta-dibujo">
+                    <span class="etiqueta-exclusiva">Píxel</span>
+                    <img src="imagenes/dibujo6.jpg" alt="Composición digital pixel art de 8 bits" width="400" height="300" loading="lazy">
+                    <div class="cuerpo-tarjeta">
+                        <h3>"Lápiz Conté y Píxel"</h3>
+                        <p>Inspirado en los pioneros de <em>"The Masters of Pixel Art"</em>, este diseño rinde tributo al bloque y al control riguroso del color.</p>
+                        <p>Intercambio de energía: <s class="precio-viejo">48 &euro;</s> <mark class="oferta"><span class="precio-actual">32 &euro;</span> &nbsp; ¡Oferta Vanguardista!</mark></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="pie-pagina">&copy; 2026 Galería de Arte &mdash; Realizado por Estefani Dias Black &mdash; Curso 2026-2027</p>
+        <p class="pie-pagina">Acompáñame a mi comunidad | <a href="noticias.xml">Canal RSS</a></p>
+        <p class="pie-pagina">Código fuente del proyecto: <a href="https://github.com" target="_blank" rel="noopener">Repositorio en GitHub</a></p>
+    </footer>
+</body>
+</html>

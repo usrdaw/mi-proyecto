@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <!-- Datos principales de tu sitio web -->
+    <title>Del Pincel al Píxel - Galería de Arte</title>
+    <link>https://tudominio.com</link>
+    <description>Evolución del arte tradicional hacia el lienzo digital inspirado en grandes tratados estéticos.</description>
+    <language>es</language>
+    <lastBuildDate>Wed, 21 Oct 2026 08:30:00 +0200</lastBuildDate>
+
+    <!-- Noticia 1: Lanzamiento de la web -->
+    <item>
+      <title>Inauguración de la Galería Virtual: Del Pincel al Píxel</title>
+      <link>https://tudominio.com</link>
+      <description>Explora el nuevo lienzo virtual y el viaje del pigmento clásico al código binario a través de nuestras secciones.</description>
+      <pubDate>Wed, 21 Oct 2026 08:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Noticia 2: Actualización del catálogo -->
+    <item>
+      <title>Nueva Colección Disponibles en el Catálogo</title>
+      <link>https://tudominio.com</link>
+      <description>Ya puedes contemplar e interactuar con nuestros 6 nuevos dibujos exclusivos, incluyendo estudios a punta de plata y composiciones Pixel Art.</description>
+      <pubDate>Wed, 21 Oct 2026 08:15:00 +0200</pubDate>
+    </item>
+    <!-- Noticia 3: Horario -->
+    <item>
+      <title>Nuevo horario de ciclos creativos</title>
+      <link>https://tudominio.com</link>
+      <description>Ya está publicada la tabla con los ciclos de arte y meditación de lunes a viernes.</description>
+      <pubDate>Wed, 21 Oct 2026 08:30:00 +0200</pubDate>
+    </item>
+  </channel>
+</rss>

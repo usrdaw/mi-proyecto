@@ -1,0 +1,953 @@
+/* ==========================================================================
+   1. RESET, VARIABLES CORPORATIVAS Y MODELO DE CAJA OBLIGATORIO
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --color-principal: #1a73e8;
+  --color-oscuro: #202124;
+  --color-claro: #f8f9fa;
+  --color-alerta: #f59e0b;
+  --color-borde: #dadce0;
+  --fuente-base: "Poppins", system-ui, Arial, sans-serif;
+  --radio-tarjeta: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-base);
+  color: var(--color-oscuro);
+  background-color: #ffffff;
+  line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. ACCESIBILIDAD: FOCO VISIBLE Y NAVEGACIÓN POR TECLADO
+   ========================================================================== */
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-alerta);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   3. CABECERA (HEADER) Y LOGOTIPO VECTORIAL
+   ========================================================================== */
+
+header {
+  text-align: center;
+  padding: 24px 16px;
+  background-color: var(--color-claro);
+  width: 100%;
+}
+
+.logo-contenedor {
+  margin-bottom: 16px;
+}
+
+.mi-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.logo-imagen {
+  max-width: 900px;
+  margin: 20px auto;
+  width: 100%;
+}
+
+.logo-portada {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* mismo tamaño en las cuatro páginas */
+  object-fit: cover; /* recorta sin deformar */
+  border-radius: var(--radio-tarjeta);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: #5f6368;
+  margin-top: 8px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   4. MAQUETACIÓN DE LA BARRA DE NAVEGACIÓN CON FLEXBOX Y STICKY
+   ========================================================================== */
+
+nav {
+  display: flex;
+  justify-content: space-between; /* Empuja el logo a la izquierda y las páginas a la derecha */
+  align-items: center; /* Centra verticalmente el contenido dentro de la barra */
+  background-color: #000000;
+  padding: 10px 24px; /* Añade separación con los bordes de la pantalla */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* Agrupa y separa horizontalmente los enlaces de texto */
+.nav-enlaces {
+  display: flex;
+  gap: 40px;
+}
+
+/* Quita márgenes y limpia el contenedor del logotipo */
+.nav-logo {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  display: block;
+  height: 80px; /* Tamaño adaptado para que quede estilizado dentro de la barra azul */
+  width: auto;
+}
+
+/* Estilos de tus enlaces de texto */
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  font-size: 1.5rem; /* Tamaño de letra grande y visible */
+}
+
+nav a:hover {
+  background-color: #ffffff;
+  color: var(--color-principal);
+}
+
+/*nav {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 40px;
+  background-color: var(--color-principal);
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.3rem;
+}
+
+nav a:hover{
+  background-color: #ffffff;
+  color: var(--color-principal);
+}
+
+
+/* ==========================================================================
+   5. CONTENIDO PRINCIPAL (MAIN) Y ANIMACIONES DE ENTRADA
+   ========================================================================== */
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  width: 100%;
+}
+p.texto-justificado {
+  text-align: justify !important;
+}
+
+li.texto-justificado {
+  text-align: justify !important;
+}
+.animated-page {
+  animation: aparecerSuave 0.8s ease-out both;
+}
+
+@keyframes aparecerSuave {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: var(--color-principal);
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin: 20px 0 12px 0;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+ul,
+ol {
+  margin: 16px 0 24px 32px;
+
+}
+
+li {
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+/* ==========================================================================
+   6. CONTENEDORES MULTIMEDIA NATIVOS E IFRAMES
+   ========================================================================== */
+
+.contenedor-multimedia,
+.contenedor-iframe {
+  margin: 32px auto;
+  max-width: 640px;
+  text-align: center;
+  width: 100%;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radio-tarjeta);
+  border: 1px solid var(--color-borde);
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: var(--radio-tarjeta);
+  border: 0;
+}
+.contenedor-iframe:hover{
+  color: #8a2be2;
+}
+.contenedor-multimedia:hover{
+  color: #8a2be2;
+}
+
+/* ==========================================================================
+   7. SECCIÓN DE CATÁLOGO: MAQUETACIÓN EN REJILLA SIMÉTRICA (CAJAS IGUALES)
+   ========================================================================== */
+
+.galeria-artesanal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.tarjeta-dibujo {
+  background-color: var(--color-claro);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.tarjeta-dibujo:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.etiqueta-exclusiva {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: var(--color-alerta);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  z-index: 10;
+}
+
+.tarjeta-dibujo img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background-color: #ebebeb;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-dibujo:hover img {
+  transform: scale(1.02);
+}
+
+.cuerpo-tarjeta {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cuerpo-tarjeta h3 {
+  margin-top: 0;
+}
+
+.cuerpo-tarjeta p:last-child {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.precio-viejo {
+  color: #7f8c8d;
+}
+
+.oferta {
+  background-color: rgba(26, 115, 232, 0.1);
+  color: var(--color-principal);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   8. TABLA DE CICLOS Y HORARIOS ESTRUCTURADA
+   ========================================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.95rem;
+  border: 2px solid var(--color-principal);
+  box-shadow: 0 40px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+caption {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-principal);
+  text-align: left;
+  font-size: 1.1rem;
+}
+caption.texto-caption:hover{
+  color: #ff4500;
+
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-borde);
+  border-right: 1px solid var(--color-borde);
+}
+th:first-child,
+td:first-child {
+  min-width: 160px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+thead th {
+  background-color: var(--color-principal);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 2px solid var(--color-principal);
+}
+tbody tr:nth-child(even) {
+  background-color: var(--color-claro);
+}
+tbody tr:hover {
+  background-color: rgba(26, 115, 232, 0.05);
+}
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+
+.franja {
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: var(--color-oscuro);
+}
+
+/* ==========================================================================
+   9. FORMULARIO DE CONTACTO COMPLETO Y VALIDADORES DE ENTRADA
+   ========================================================================== */
+
+form {
+  background-color: var(--color-claro);
+  padding: 24px;
+  border-radius: var(--radio-tarjeta);
+  border: 1px solid var(--color-borde);
+  max-width: 650px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+fieldset {
+  border: 1px solid var(--color-borde);
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: 700;
+  padding: 0 8px;
+  color: var(--color-principal);
+}
+
+form p {
+  margin-bottom: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  margin-top: 4px;
+  font-family: var(--fuente-base);
+  font-size: 1rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+button[type="submit"] {
+  background-color: var(--color-principal);
+  color: #ffffff;
+  border: 0;
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1152b3;
+}
+
+/* ==========================================================================
+   10. ESTRUCTURA COMPLEMENTARIA: BARRA LATERAL (ASIDE) Y PIE DE PÁGINA
+   ========================================================================== */
+
+aside {
+  background-color: var(--color-claro);
+  border: 1px solid var(--color-borde);
+  padding: 20px;
+  border-radius: var(--radio-tarjeta);
+  margin-top: 32px;
+  margin-bottom: 40px;
+  animation: latidoSutil 3s ease-in-out infinite;
+  width: 100%;
+}
+
+aside.bloque-literario:hover{
+  color: #1a73e8;
+}
+
+@keyframes latidoSutil {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+footer {
+  background-color: var(--color-oscuro);
+  color: #ffffff;
+  text-align: center;
+  padding: 32px 16px;
+  margin-top: 48px;
+  width: 100%;
+}
+
+footer p.pie-pagina {
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+footer a {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   11. DISEÑO RESPONSIVE Y SISTEMA ANTIDESBORDAMIENTO (CERO SOLAPAMIENTOS)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .galeria-artesanal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px;
+    width: 100%;
+  }
+
+  .nav-enlaces {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  nav a {
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+  }
+
+  .nav-enlaces a {
+    flex: 1 1 40%;
+  }
+
+  .galeria-artesanal {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-obra img {
+    max-width: 100%;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  table caption {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+  thead {
+    display: none !important;
+  }
+  tr {
+    border: 1px solid var(--color-borde) !important;
+    margin-bottom: 24px !important;
+    background-color: var(--color-claro) !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+  }
+  td {
+    border: none !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+    padding: 10px 4px !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    line-height: 1.4 !important;
+  }
+  td:last-child {
+    border-bottom: none !important;
+  }
+  td::before {
+    content: attr(data-label) ": " !important;
+    display: inline-block !important;
+    width: 90px !important;
+    font-weight: 700 !important;
+    color: var(--color-principal) !important;
+    vertical-align: top !important;
+    margin-right: 8px !important;
+  }
+  td.franja {
+    background-color: rgba(26, 115, 232, 0.08) !important;
+    color: var(--color-principal) !important;
+    padding: 8px 12px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+    margin-bottom: 10px !important;
+  }
+  td.franja::before {
+    display: none !important;
+  }
+}
+/* ==========================================================================
+12. RESPETO POR LA ACCESIBILIDAD DEL SISTEMA OPERATIVO
+========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .animated-page,
+  aside {
+    animation: none !important;
+  }
+  nav a,
+  button[type="submit"] {
+    transition: none !important;
+  }
+}
+
+p.texto-especial {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 16px;
+  transition: 0.1s ease;
+}
+p.texto-especial:hover {
+  color: crimson;
+}
+h3.texto-especial {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 1.6rem;
+  color: var(--color-oscuro);
+  margin-bottom: 16px;
+  color: #000000;
+  transition: color 0.1s ease;
+  width: max-content;
+}
+h3.texto-especial:hover {
+  color: #ff4500;
+}
+h3:last-child {
+  color: #f59e0b;
+  transition: color 0.1s ease;
+}
+h3:last-child:hover {
+  color: #d97706;
+}
+h2.texto-especial {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-oscuro);
+  margin-bottom: 16px;
+  color: #000000;
+  transition: color 0.1s ease;
+  width: max-content;
+}
+h2.texto-especial:hover {
+  color: blueviolet;
+}
+/* Efecto hover para tus párrafos */ /* Verde esmeralda al pasar el ratón */
+
+/* Estilos estándar para la imagen y su pie de foto */
+.contenedor-obra {
+  margin: 20px 0; /* Añade un espacio arriba y abajo por defecto */
+  padding: 0;
+}
+
+.contenedor-obra img {
+  display: block;
+  max-width: 30%; /* Evita que la imagen se salga de la pantalla en móviles */
+  margin: 24px auto;
+  padding: 0; /* Mantiene la proporción original de la foto */
+}
+
+.contenedor-obra figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem; /* Un tamaño de letra estándar y discreto */
+  color: #555555; /* Gris oscuro clásico para texto secundario */
+  line-height: 1.4;
+}
+
+/* Centrar el pie de foto mediante su clase */
+.pie-foto-obra {
+  text-align: center; /* Esta propiedad alinea el texto justo al centro */
+  margin-top: 10px; /* Añade una separación limpia entre la imagen y el texto */
+  font-size: 0.9rem; /* Hace la letra un poco más pequeña y elegante */
+  color: #555555; /* Color gris oscuro clásico para notas al pie */
+}
+.pie-foto-obra:hover {
+  color: #8a2be2;
+  transition: 0.1s ease;
+}
+h3.texto-destacado {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 1.6rem;
+  color: var(--color-oscuro);
+  margin-bottom: 16px;
+  color: #000000;
+  transition: color 0.1s ease;
+  width: max-content;
+}
+h3.texto-destacado:hover {
+  color: #ff4500;
+}
+h1.texto-inicial {
+  color: #000000;
+  width: max-content;
+  margin: 0 auto 8px;
+}
+h1.texto-inicial:hover {
+  color: #10b981;
+}
+p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+p.texto-aparte {
+  text-align: center;
+}
+/* ==========================================================================
+   AGREGADO OBLIGATORIO: MAQUETACIÓN DEL FAQ CON CAJA DE TEXTO (CORREGIDO)
+   ========================================================================== */
+
+.seccion-faq {
+    margin-top: 24px;
+    width: 100%;
+}
+
+.seccion-faq h3 {
+    width: max-content;
+    color: var(--color-principal);
+    margin-bottom: 24px;
+    font-size: 1.6rem;
+    transition: color 0.1s ease;
+}
+.seccion-faq h3:hover {
+    color: #ff4500;
+}
+
+.faq-contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 40px; 
+}
+
+.faq-item {
+    border-bottom: 1px solid #e5e7eb; 
+    padding: 18px 8px;                
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* Quitar el marcador nativo de details */
+.faq-item summary.faq-pregunta { list-style: none; }
+.faq-item summary.faq-pregunta::-webkit-details-marker { display: none; }
+.faq-item summary.faq-pregunta:focus-visible { outline: 3px solid var(--color-alerta); outline-offset: 4px; }
+
+/* La cabecera de la pregunta */
+.faq-item summary.faq-pregunta {
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-weight: 700;                 
+    font-size: 1.15rem;
+    color: #111827;                   
+    cursor: pointer;
+    min-height: 44px;
+    gap: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+/* Icono angular lateral de flecha */
+.faq-item summary.faq-pregunta::after {
+    content: "❯";                     
+    font-size: 0.85rem;
+    color: #9ca3af;                   
+    transform: rotate(90deg);         
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-item summary.faq-pregunta:hover {
+    color: var(--color-principal);    
+}
+
+/* Reacciones del título y la flecha cuando se activa el click */
+.faq-item[open] > summary.faq-pregunta {
+    color: var(--color-principal) !important;    
+}
+
+.faq-item[open] > summary.faq-pregunta::after {
+    transform: rotate(-90deg) !important;        
+    color: var(--color-principal) !important;
+}
+
+/* 🟢 PRIORIDAD ABSOLUTA: Ocultamos de golpe las 3 cajas de texto por igual */
+.faq-item div.faq-respuesta {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important; /* Corta e impide que el texto sobresalga */
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 0 16px !important; /* Quita el relleno vertical interno */
+    margin-top: 0 !important;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.25s ease, 
+                background-color 0.3s ease, 
+                padding 0.3s ease,
+                margin-top 0.3s ease;
+}
+
+/* 🟢 PRIORIDAD ABSOLUTA: Expandimos y pintamos la caja de texto SOLO de la pregunta seleccionada */
+.faq-item[open] > div.faq-respuesta {
+    max-height: none !important;                
+    opacity: 1 !important;
+    margin-top: 14px !important; 
+    padding: 16px !important; /* Añade espacio dentro del recuadro gris */
+    background-color: var(--color-claro) !important; /* Pinta la caja de texto gris claro */
+    border: 1px solid var(--color-borde) !important;  /* Aplica el borde lineal */
+}
+
+/* Forzar que los párrafos hereden correctamente la altura cero al estar cerrados */
+.faq-item div.faq-respuesta p {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    color: var(--color-oscuro) !important; 
+    line-height: 1.65 !important;
+    font-size: 1.05rem !important;
+}
+
+/* ==========================================================================
+   AGREGADO OBLIGATORIO: SEPARACIÓN PARA EL FORMULARIO INFERIOR
+   ========================================================================== */
+
+.seccion-formulario-contacto {
+    margin-top: 56px; 
+    width: 100%;
+}
+
+.seccion-formulario-contacto h3 {
+    width: max-content;
+    color: var(--color-principal);
+    margin-bottom: 24px;
+    font-size: 1.6rem;
+    transition: color 0.1s ease;
+}
+
+.seccion-formulario-contacto h3:hover {
+    color: #ff4500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item div.faq-respuesta,
+  .faq-item summary.faq-pregunta::after {
+    transition: none !important;
+    max-height: max-content !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Móvil: los títulos con width: max-content se ajustan al ancho de pantalla
+   (va al final para ganar a las reglas anteriores) */
+@media (max-width: 768px) {
+  h1.texto-inicial,
+  h2.texto-especial,
+  h3.texto-especial,
+  h3.texto-destacado,
+  .seccion-faq h3,
+  .seccion-formulario-contacto h3 {
+    width: auto;
+    overflow-wrap: break-word;
+  }
+
+  h2.texto-especial,
+  p.texto-especial {
+    font-size: 1.5rem;
+  }
+
+  h3.texto-especial,
+  h3.texto-destacado,
+  .seccion-faq h3,
+  .seccion-formulario-contacto h3 {
+    font-size: 1.3rem;
+  }
+}
